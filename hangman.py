@@ -111,12 +111,12 @@ def get_data():
 
 def interface(words):
 # char control (only lower letters)   
-    points = 100
+    points = 0
     rounds = 0
     while rounds<=len(words):
         
         word = list(words[rounds])
-        rounds += 1
+        rounds += 100
         special = ['á', 'é', 'í', 'ó', 'ú']
         standar = ['a', 'e', 'i', 'o', 'u']
         for i in range(len(word)):
@@ -126,7 +126,7 @@ def interface(words):
                 if word[i] == char:
                     word[i] = standar[cont]
                 cont += 1    
-        print(word)
+        
 
     #show total spaces for the word
         guess_status = ['_' for letter in word ]
