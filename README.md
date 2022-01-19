@@ -1,2 +1,2 @@
 # hangman_game
-Proyecto hamgman para curso de python con Platzi
+Proyecto hangman para curso de python con Platzi
