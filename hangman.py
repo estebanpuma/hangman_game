@@ -83,16 +83,6 @@ def start():
     print(start_w)
     time.sleep(1)
     os.system ("cls")
-#Max time for each game
-def timeout():
-    timer = 120
-    for s in range (120):
-        print(timer)
-        time.sleep(1)
-        timer -= 1
-        os.system ("cls")
-        if timer == 0:
-            print("game over")
 
 #player info
 def player():
@@ -114,9 +104,9 @@ def interface(words):
     points = 0
     rounds = 0
     while rounds<=len(words):
-        
+        rounds += 1
         word = list(words[rounds])
-        rounds += 100
+        points += 100
         special = ['á', 'é', 'í', 'ó', 'ú']
         standar = ['a', 'e', 'i', 'o', 'u']
         for i in range(len(word)):
@@ -177,36 +167,36 @@ def interface(words):
 
             if guessed_letter not in word:
                 errors += 1
-            if errors == 0:
-                points += 0    
+                points -= 16  
                 
             if errors == 1:
-                points -=10
                 print(firsterror)
+
             elif errors == 2:
-                points -=20
                 print(secerror)
+
             elif errors == 3:
-                points -=30
                 print(thirderror)
-            elif errors == 4:
-                points -=40
+
+            elif errors == 4: 
                 print(fourtherror)
-            elif errors == 5:
-                points -=50
+
+            elif errors == 5:               
                 print(fiftherror)
-            elif errors == 6:
-                points -=100
+
+            elif errors == 6:      
+                points -= 4         
                 print(sixerror)
                 print('Puntos: ', points)
                 time.sleep(2)
+                exit()
                 break
 
             if guess_status == list(word):
                 print('Felicidades. Ganaste!!!')
                 print('Puntos: ', points)
-                points += 100
                 time.sleep(2)
+                os.system ("cls")
                 break
 
         
